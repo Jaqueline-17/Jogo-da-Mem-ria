@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+const localPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
 const personagens = [
     'ace',
@@ -28,7 +30,8 @@ const checkFimdeJogo = () => {
     const cartasDesabilitadas = document.querySelectorAll('.desabilitar-carta');
 
     if (cartasDesabilitadas.length === 24){
-        alert('Parabéns, Você concluiu o jogo!');
+        clearInterval(this.loop);
+        alert(`Parabéns, ${localPlayer.innerHTML}. Seu tempo foi de: ${timer.innerHTML}s. Em breve teremos mais fases, Obrigado por Jogar!`);
     }
 }
 
@@ -103,4 +106,18 @@ const loadGame = () => {
     });
 }
 
-loadGame();
+const comecarTimer = () => {
+    this.loop = setInterval(() => {
+        const tempoAtual = +timer.innerHTML; // O simbolo de "+" converte a variável de string para númnero de forma mais fácil
+        timer.innerHTML = tempoAtual + 1;
+    }, 1000);
+
+} 
+
+window.onload = () => {
+    localPlayer.innerHTML = localStorage.getItem('player');
+    comecarTimer();
+
+    loadGame();    
+}
+
