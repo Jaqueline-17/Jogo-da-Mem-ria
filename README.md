@@ -8,7 +8,7 @@ Projeto de um jogo da Memória com o tema One Piece. Este projeto foi feito util
 
 Para utilizar o projeto o usuário deve informar o seu nome e prosseguir para a página de jogo. Após isso o jogo será iniciado e o cronômetro iniciará. Após encontrar todos os pares será informado ao jogador o tempo de jogo.
 
-Teste este projeto através do GitHub Pages. 
+Teste este projeto através do GitHub Pages ou Link do Vercel na descrição. 
 
 ## Descrição
 
